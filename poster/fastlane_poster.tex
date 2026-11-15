@@ -1,4 +1,4 @@
-% FastLane poster, A1 landscape (841 x 594 mm), in the IIIT Hyderabad poster format (LTRC).
+% FastLane poster, A1 landscape (841 x 594 mm), in the IIIT Hyderabad poster format.
 % Build (from poster/):  xelatex fastlane_poster.tex
 % Figures:              .venv/bin/python poster/make_poster_figures.py   (from the repo root)
 \documentclass{article}
@@ -127,16 +127,17 @@ code. They removed those errors, but success in a rerun moved only within noise 
 \node[anchor=center, inner sep=0] at (542mm,-504.5mm) {\includegraphics[width=162mm,height=85mm,keepaspectratio]{figures/failures_poster.pdf}};
 
 % ---------------------------------------------------------------- column 3
-\filldraw[fill=white, draw=cstarborder, line width=0.9mm] (642mm,-79mm) rectangle ++(188mm,-55mm);
-\node[anchor=center, inner sep=0, font=\fontsize{80}{80}\selectfont, text=black] at (736mm,-99mm) {LTRC};
-\node[anchor=center, inner sep=0, font=\fontsize{23}{27}\selectfont, text=black] at (736mm,-123mm) {Language Technologies Research Centre};
-
-\panel{642}{140}{188}{420}{mintc}
-\content{651}{149}{170}{\sechead{CONCLUSION AND\\FUTURE WORKS}\RaggedRight
-\bul{A tuned 3B model handles four of five turns, with 78\% fewer large-model calls.}
-\bul{Safety belongs in code: no unconfirmed changes, vs.\ 37--65\% of calls with rules in the prompt.}
+\panel{642}{80}{188}{479}{mintc}
+\content{651}{89}{170}{\sechead{CONCLUSION AND\\FUTURE WORKS}\RaggedRight
+\bul{A tuned 3B model answers four of five turns: 90\% success on 120 calls with 78\% fewer large-model calls.}
+\bul{Safety belongs in code: no unconfirmed changes, vs.\ 37\% (B1) and 65\% (A3) of calls with prompt rules.}
+\bul{Fine-tuning is essential: without it success falls from 96\% to 44\%.}
 \bul{No speed gain here: a hosted 120B model beats a 3B model on a laptop.}
-\bul{Next: a faster small-model path, retraining on corrected data, real callers.}
+\vspace{2mm}
+{\bfseries Future work:}
+\bul{one small-model step for search and read-back; speculative decoding;}
+\bul{retraining on corrected data; a written routing guideline;}
+\bul{tests with real callers and recordings.}
 \vspace{6mm}
 \sechead{ACKNOWLEDGMENT}
 \justifying We thank the instructors and teaching assistants of the LMA 2026 course for their guidance and feedback.
